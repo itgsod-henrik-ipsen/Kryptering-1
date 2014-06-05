@@ -4,11 +4,24 @@ def encrypt(input, offset)
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
     input = input.upcase
-    inputList = ([] << input)
 
     output = ''
 
+    input.each_char do |char|
+
+        i = alphabet.index(char)
+        new_i = i
+        new_i += offset
+        value = alphabet[new_i]
+        output += value
+
+
+    end
     return output
 
 end
+p encrypt('fail', 5)
+
+
+
 
